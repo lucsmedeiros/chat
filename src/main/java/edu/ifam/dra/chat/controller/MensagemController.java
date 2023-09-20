@@ -27,7 +27,7 @@ public class MensagemController {
 	@Autowired
 	ContatoService contatoService;
 	
-	@GetMapping("/mensagem/receber/{id}")
+	@GetMapping("/mensagem/{id}")
 	ResponseEntity<List<Mensagem>> getMensagens(@PathVariable Long id) {
 		Contato receptor = contatoService.getContato(id);
 		List<Mensagem> mensagens = mensagemService.getMensagens(receptor);
@@ -39,7 +39,7 @@ public class MensagemController {
 		
 	}
 	
-	@PostMapping("/mensagem/enviar")
+	@PostMapping("/mensagem")
 	ResponseEntity<Mensagem> setMensagem(@RequestBody MensagemDTO mensagemDTO) {
 		Contato emissor = contatoService.getContato(mensagemDTO.getEmissor());
 		Contato receptor = contatoService.getContato(mensagemDTO.getReceptor());
@@ -51,25 +51,6 @@ public class MensagemController {
 		mensagem.setReceptor(receptor);
 		
 		mensagemService.setMensagem(mensagem);
-		return ResponseEntity.created(null).body(mensagem);
-	}
-	
-	@PutMapping("/mensagem/editar/{id}")
-	ResponseEntity<Mensagem> setMensagem(@RequestBody Mensagem mensagem, @PathVariable Long id) {
-		try {
-			return ResponseEntity.accepted().body(mensagemService.setMensagem(id, mensagem));
-		} catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Mensagem());
-		}
-	}
-	
-	@DeleteMapping("/mensagem/deletar/{id}")
-	ResponseEntity<Mensagem> deleteMensagem(@PathVariable Long id) {
-		try {
-			mensagemService.deleteMensagem(id);
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new Mensagem());
-		} catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Mensagem());
-		}
+		return ResponseEntity.created(null).body(null);
 	}
 }

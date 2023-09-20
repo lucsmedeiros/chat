@@ -8,9 +8,9 @@ public class MensagemDTO {
 	private Long emissor;
 	private Long receptor;
 	
-	public MensagemDTO(Calendar dataHora, String conteudo, Long emissor, Long receptor) {
+	public MensagemDTO(String conteudo, Long emissor, Long receptor) {
 		super();
-		this.dataHora = dataHora;
+		this.dataHora = Calendar.getInstance();
 		this.conteudo = conteudo;
 		this.emissor = emissor;
 		this.receptor = receptor;

@@ -45,7 +45,7 @@ public class ContatoController {
 	@PostMapping
 	ResponseEntity<Contato> setContato(@RequestBody Contato contato) {
 		contatoService.setContato(contato);
-		return ResponseEntity.created(null).body(contato);
+		return ResponseEntity.created(null).body(null);
 	}
 	
 	@PutMapping("/{id}")

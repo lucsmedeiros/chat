@@ -8,18 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Contato {
 	
-	/* 
-		{
-	 		"nome": "Lucas",
-	 		"email": "lucas@email.com",
-	 		"telefone": "9291234-5678",
-	 		"endereco": "Rua B14",
-	 		"bairro": "Japiim",
-	 		"cidade": "Manaus",
-	 		"estado": "Amazonas"
-	 	}
-	 */
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

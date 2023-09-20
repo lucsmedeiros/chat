@@ -1,4 +1,4 @@
-package edu.ifam.dra.chat.model;
+package edu.ifam.dra.chat.dto;
 
 import java.util.Calendar;
 

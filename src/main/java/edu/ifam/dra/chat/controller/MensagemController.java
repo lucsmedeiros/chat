@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.ifam.dra.chat.dto.MensagemDTO;
 import edu.ifam.dra.chat.model.Contato;
 import edu.ifam.dra.chat.model.Mensagem;
-import edu.ifam.dra.chat.model.MensagemDTO;
 import edu.ifam.dra.chat.service.ContatoService;
 import edu.ifam.dra.chat.service.MensagemService;
 
